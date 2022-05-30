@@ -4,7 +4,7 @@ var arr=JSON.parse(localStorage.getItem("coffee"))|| []
 console.log(arr)
 var total= arr.reduce(function(sum,elem,index){
     return sum+ Number(elem.price)
-},1)
+},0)
 var bucket= document.getElementById("add_to_bucket")
 appendData(arr)
   
