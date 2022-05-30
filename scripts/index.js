@@ -15,6 +15,9 @@
     })
     
     var arr=JSON.parse(localStorage.getItem("coffee")) ||[]
+    var total= arr.reduce(function(sum,elem,index){
+        return sum+ index
+    },0)
     function appendData(data){
         // console.log(data)
         data.forEach(function(elem){
@@ -35,7 +38,7 @@
             button.addEventListener("click",function(){
                 arr.push(elem)
                 let count= document.getElementById("coffee_count")
-                count.value=""
+                count.innerText=`${total}`
                 console.log(count)
 
                 // console.log(arr)
