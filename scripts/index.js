@@ -18,6 +18,8 @@
     var total= arr.reduce(function(sum,elem,index){
         return sum+ index
     },0)
+    var count=0
+    var coffeecount=document.getElementById("coffee_count")
     function appendData(data){
         // console.log(data)
         data.forEach(function(elem){
@@ -37,9 +39,8 @@
             button.setAttribute("id","add_to_bucket”")
             button.addEventListener("click",function(){
                 arr.push(elem)
-                let count= document.getElementById("coffee_count")
-                count.innerText=`${total}`
-                console.log(count)
+                count++
+                coffeecount.innerHTML=count
 
                 // console.log(arr)
                 var data= localStorage.setItem("coffee",JSON.stringify(arr))
